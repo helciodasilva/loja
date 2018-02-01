@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace loja\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

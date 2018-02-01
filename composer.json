@@ -23,7 +23,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "loja\\": "app/"
         }
     },
     "autoload-dev": {
