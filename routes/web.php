@@ -11,6 +11,14 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('categories', 'CategoryController');
+
+Route::resource('products', 'ProductController');
+
+Route::get("/login", "LoginController@login");
+Route::post("/login", "LoginController@login");
