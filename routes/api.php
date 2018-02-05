@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use loja\Product;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,4 +15,10 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['middleware' => 'jwt.auth'], function() {
+	Route::get('/1/products', function () {
+		return Product::all();
+	});
 });
