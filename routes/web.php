@@ -16,9 +16,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('categories', 'CategoryController');
+Route::group(['middleware' => 'jwt.auth'], function() {
+	
+    Route::resource('categories', 'CategoryController');
 
-Route::resource('products', 'ProductController');
+    Route::resource('products', 'ProductController');
 
+});
 Route::get("/login", "LoginController@login");
 Route::post("/login", "LoginController@login");
