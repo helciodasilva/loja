@@ -20,5 +20,5 @@ Route::resource('categories', 'CategoryController');
 
 Route::resource('products', 'ProductController');
 
-Route::get("/login", "LoginController@login");
+Route::get("/login", "LoginController@index");
 Route::post("/login", "LoginController@login");
