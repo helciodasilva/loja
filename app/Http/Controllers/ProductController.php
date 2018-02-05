@@ -11,7 +11,11 @@ use Session;
 use Request;
 
 class ProductController extends Controller{
-       
+      
+    public function __construct() {
+        $this->middleware('jwt.auth', ['except' => ['index', 'show', 'store']]);
+    }
+	  
     public function index(){
 		
 		$product = (new Product)->newQuery();
