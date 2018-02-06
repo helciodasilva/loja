@@ -2,7 +2,7 @@
 
 @section("conteudo")
 
-@if(empty($categories))
+@if(!count($categories))
 <div class="alert alert-danger">
     Você não tem nenhum categoria cadastrado.
 </div>

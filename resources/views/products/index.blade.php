@@ -2,7 +2,7 @@
 
 @section("conteudo")
 
-@if(empty($products))
+@if(!count($products))
 <div class="alert alert-danger">
     Você não tem nenhum produto cadastrado.
 </div>
