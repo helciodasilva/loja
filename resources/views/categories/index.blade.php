@@ -21,7 +21,7 @@
 
 @if(!count($categories))
 <div class="alert alert-danger">
-    Você não tem nenhum categoria cadastrado.
+    Não existe nenhuma categoria cadastrada no sistema.
 </div>
 @else
 	

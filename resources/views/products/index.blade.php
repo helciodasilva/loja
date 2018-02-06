@@ -23,7 +23,7 @@
 
 @if(!count($products))
 <div class="alert alert-danger">
-    Você não tem nenhum produto cadastrado.
+    Não existe nenhum produto cadastrado no sistema.
 </div>
 @else
 		 
