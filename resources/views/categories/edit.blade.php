@@ -15,7 +15,6 @@
 {{ HTML::ul($errors->all()) }}@endif
 
 {{ Form::model($category, array('route' => array('categories.update', $category->id), 'method' => 'PUT', 'files' => true)) }}
-    <input type="hidden" name="_method" value="PUT">
     <div class="form-group">
         {{ Form::label('name', 'Nome') }}
         {{ Form::text('name', null, array('class' => 'form-control')) }}
