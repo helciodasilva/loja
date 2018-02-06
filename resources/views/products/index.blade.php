@@ -2,30 +2,30 @@
 
 @section("conteudo")
 
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+<div class="pull-right">
+	{{ Form::open(array('method' => 'get', 'class'=>'form-inline', 'url' => 'products/')) }}
+		{{ Form::label('filter', 'Filtrar por') }}
+		{{ Form::select('filter', ['product' => 'Produto', 'category' => 'Categoria'], null,  array('class' => 'form-control')) }}
+		<div class="form-group">
+			{{ Form::text('q', null, array('class' => 'form-control')) }}
+		</div>
+		{{ Form::button('Pesquisar', array('class' => 'btn btn-primary', 'type'=>'submit')) }}
+		<a href="{{ URL::to('products/create') }}" class="btn btn-success">
+			<i class="glyphicon glyphicon-plus"></i>Cadastrar
+		</a>
+	{{ Form::close() }}
+</div>
+
+<h1>Produtos</h1>
+
 @if(!count($products))
 <div class="alert alert-danger">
     Você não tem nenhum produto cadastrado.
 </div>
 @else
-
-	@if (Session::has('message'))
-		<div class="alert alert-info">{{ Session::get('message') }}</div>
-	@endif
-	<div class="pull-right">
-		{{ Form::open(array('method' => 'get', 'class'=>'form-inline', 'url' => 'products/')) }}
-			{{ Form::label('filter', 'Filtrar por') }}
-			{{ Form::select('filter', ['product' => 'Produto', 'category' => 'Categoria'], null,  array('class' => 'form-control')) }}
-			<div class="form-group">
-				{{ Form::text('q', null, array('class' => 'form-control')) }}
-			</div>
-			{{ Form::button('Pesquisar', array('class' => 'btn btn-primary', 'type'=>'submit')) }}
-			<a href="{{ URL::to('products/create') }}" class="btn btn-success">
-				<i class="glyphicon glyphicon-plus"></i>Cadastrar
-			</a>
-		{{ Form::close() }}
-	</div>
-
-	<h1>Produtos</h1>
 		 
 	<table class="table table-striped table-bordered table-hover">
 		<thead>

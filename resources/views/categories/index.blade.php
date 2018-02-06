@@ -2,29 +2,29 @@
 
 @section("conteudo")
 
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+<div class="pull-right">
+	{{ Form::open(array('method' => 'get', 'class'=>'form-inline', 'url' => 'categories/')) }}
+		<div class="form-group">
+			{{ Form::text('q', null, array('class' => 'form-control')) }}
+		</div>
+		{{ Form::button('Pesquisar', array('class' => 'btn btn-primary', 'type'=>'submit')) }}
+		<a href="{{ URL::to('categories/create') }}" class="btn btn-success">
+			<i class="glyphicon glyphicon-plus"></i>Cadastrar
+		</a>
+	{{ Form::close() }}
+</div>
+
+<h1>Categorias</h1>
+
 @if(!count($categories))
 <div class="alert alert-danger">
     Você não tem nenhum categoria cadastrado.
 </div>
 @else
-
-	@if (Session::has('message'))
-		<div class="alert alert-info">{{ Session::get('message') }}</div>
-	@endif
-	<div class="pull-right">
-		{{ Form::open(array('method' => 'get', 'class'=>'form-inline', 'url' => 'categories/')) }}
-			<div class="form-group">
-				{{ Form::text('q', null, array('class' => 'form-control')) }}
-			</div>
-			{{ Form::button('Pesquisar', array('class' => 'btn btn-primary', 'type'=>'submit')) }}
-			<a href="{{ URL::to('categories/create') }}" class="btn btn-success">
-				<i class="glyphicon glyphicon-plus"></i>Cadastrar
-			</a>
-		{{ Form::close() }}
-	</div>
-
-	<h1>Categorias</h1>
-		
+	
 	<table class="table table-striped table-bordered table-hover">
 		<thead>
 			<tr>
