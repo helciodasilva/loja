@@ -15,7 +15,6 @@
 @endif
 
 {{ Form::open(array('url' => 'categories', 'files' => true)) }}
-    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
     <div class="form-group">
         {{ Form::label('name', 'Nome') }}
         {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}

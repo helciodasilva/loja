@@ -5,7 +5,6 @@
 <h1>Login</h1>
 
 {{ Form::open(array('url' => 'login')) }}
-    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
     <div class="form-group">
         {{ Form::label('email', 'E-mail') }}
         {{ Form::text('email', Input::old('email'), array('class' => 'form-control')) }}
