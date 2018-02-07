@@ -41,15 +41,7 @@ class LoginController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-		if (($request->ajax() && ! $request->pjax()) || $request->wantsJson()) {
-			return response()->json(compact('token'));
-		} else {
-			
-			setcookie("jwt_token", $token);
-			return redirect('/');
-
-		}
-		
+		return response()->json(compact('token'));
 
     }
 
