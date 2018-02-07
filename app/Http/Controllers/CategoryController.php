@@ -13,7 +13,7 @@ use Request;
 class CategoryController extends Controller{
 	
     public function __construct() {
-        $this->middleware('jwt.auth', ['except' => ['index', 'show', 'store']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'store']]);
     }
 	
     public function index(){
