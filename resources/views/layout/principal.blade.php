@@ -4,7 +4,6 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/loja.css" rel="stylesheet">
     <title>Loja</title>
-	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
 <div class="container">
