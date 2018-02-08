@@ -51,16 +51,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-
-        if($exception instanceof UnauthorizedHttpException) {
-
-			if (($request->ajax() && ! $request->pjax()) || $request->wantsJson()) {
-				return response()->json(['error' => 'Unauthenticated.'], 401);
-			} else {
-				return redirect()->guest('login');
-			}
-        }
-		
+ 		
         if($exception instanceof NotFoundHttpException) {
             return response()->json([
                 'error' => [
