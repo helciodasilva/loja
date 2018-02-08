@@ -22,3 +22,5 @@ Route::group(['middleware' => 'jwt.auth'], function() {
 		return Product::all();
 	});
 });
+
+Route::post("/login", "LoginController@login");
