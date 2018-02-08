@@ -13,12 +13,38 @@
                 <a class="navbar-brand" href="/products">Produtos</a>
                 <a class="navbar-brand" href="/categories">Categorias</a>
             </div>
+            <div class="navbar-header pull-right">
+		
+				<!-- Authentication Links -->
+				@guest
+					<a class="navbar-brand" href="{{ route('login') }}">Entrar</a>
+					<a class="navbar-brand" href="{{ route('register') }}">Criar conta</a>
+				@else
+					
+					<a href="#" class="navbar-brand">{{ Auth::user()->name }}</a>
+		
+					<a href="{{ route('logout') }}" class="navbar-brand"
+						onclick="event.preventDefault();
+							 document.getElementById('logout-form').submit();">
+						Sair
+					</a>
+
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						{{ csrf_field() }}
+					</form>
+				
+				@endguest
+				
+            </div>
         </div>
+
     </nav>
+	
     @yield("conteudo")
     <footer class="footer">
         <p>© Loja</p>
     </footer>
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
