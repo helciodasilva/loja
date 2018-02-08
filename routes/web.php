@@ -16,6 +16,10 @@ Route::get('/', function () {
     return redirect('/products');
 });
 
+Route::get('/home', function () {
+    return redirect('/products');
+});
+
 Route::resource('categories', 'CategoryController');
 
 Route::resource('products', 'ProductController');
