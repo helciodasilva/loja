@@ -12,10 +12,6 @@ use Validator;
 class LoginController extends Controller
 {
 	
-    public function index(){
-        return view('login.index');
-    }
-	
     public function login(Request $request) {
         
         $credentials = $request->only('email', 'password');
