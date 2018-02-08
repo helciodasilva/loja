@@ -28,5 +28,5 @@
 		{{ Form::select('products[]', $products, null, ['multiple' => true, 'class' => 'form-control margin']) }}
 	</div>
     {{ Form::submit('Cadastrar', array('class' => 'btn btn-primary btn-block')) }}
-</form>
+{{ Form::close() }}
 @stop
